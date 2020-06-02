@@ -1,21 +1,27 @@
-let character = "luigi";
-let age = 30;
-let isBeltBlack = false;
 
-// character = 20; //produces an error
+let names = ["yoshi", "mario", "toad"]; //the type of a variable is fixed
 
-// console.log(character);
+names.push("max");
 
-// const inputs = document.querySelectorAll('input');
+let mixed = ['ken', 4, 'chun-li', 8, 9]; //, false
 
-// console.log(inputs)
+mixed.push("one");
+mixed.push(21);
+// mixed.push(true)
+mixed[0] = 3;
 
-// inputs.forEach((input) => {
-//     console.log(input);
-// })
+// Objects
 
-const circ = (diameter: number) => {
-    return diameter*Math.PI;
+let ninja = {
+    name: "Mario",
+    age: 30,
+    belt: "black"
+} 
+
+ninja.age = 40;
+
+ninja = {
+    name: "Yoshi",
+    age: 12,
+    belt: "yellow"
 }
-
-console.log(circ(4)) //if we pass a string then we get a NaN 
