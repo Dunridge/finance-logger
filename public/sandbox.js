@@ -1,19 +1,22 @@
 "use strict";
-// console.log("test max 1234")
+// let greet: Function;
+// example 1
 var greet;
-greet = function () {
-    console.log("Hello, World!");
+greet = function (name, greeting) {
+    console.log(name + " says " + greeting);
 };
-// greet = "hello" //produces an error 
-// number | string - union type
-// const add = (a: number, b: number, c: number | string = 10): void => { //by default returns void 
-var add = function (a, b, c) {
-    if (c === void 0) { c = 10; }
-    console.log(a + b);
-    console.log(c);
+// example 2
+var calc;
+calc = function (numOne, numTwo, action) {
+    if (action === 'add') {
+        return numOne + numTwo;
+    }
+    else {
+        return numOne - numTwo;
+    }
 };
-add(5, 10, 20);
-var minus = function (a, b) {
-    return a - b;
+// example 3
+var logDetails;
+logDetails = function (ninja) {
+    console.log(ninja.name + " is " + ninja.age + " years old");
 };
-var result = minus(10, 7); //result will be a number 

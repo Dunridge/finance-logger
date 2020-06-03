@@ -1,25 +1,34 @@
-// console.log("test max 1234")
+type StringOrNum = string | number; //type alias 
+type ObjWithName = { name: string, uid: StringOrNum}
 
-let greet: Function;
+// let greet: Function;
 
-greet = () => {
-    console.log("Hello, World!")
+// example 1
+let greet: (a: string, b: string) => void;
+
+greet = (name: string, greeting: string) => {
+    console.log(`${name} says ${greeting}`)
 }
 
-// greet = "hello" //produces an error 
-// number | string - union type
+// example 2
 
-// const add = (a: number, b: number, c: number | string = 10): void => { //by default returns void 
-const add = (a: number, b: number, c: number | string = 10) => { //by default returns void 
-    console.log(a + b);
-    console.log(c);
+let calc: (a: number, b: number, c: string) => number;
+
+calc = (numOne: number, numTwo: number, action: string) => {
+    if(action === 'add') {
+        return numOne + numTwo;
+    } else {
+        return numOne - numTwo;
+    }
 }
 
-add(5, 10, 20);
+// example 3
 
-const minus = (a: number, b: number): number => {
-    return a - b;
+let logDetails: (obj: {name: string, age: number}) => void;
+
+type person = {name: string, age: number};
+
+logDetails = (ninja: person) => {
+    console.log(`${ninja.name} is ${ninja.age} years old`);
 }
-
-let result = minus(10, 7); //result will be a number 
 
