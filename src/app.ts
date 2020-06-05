@@ -1,14 +1,30 @@
-// const anchor = document.querySelector('a')!;
+import {Invoice} from './classes/invoice.js'; 
 
-// console.log(anchor.href);
+const invOne = new Invoice("Mario", "work on the mario website", 250)
+const invTwo = new Invoice("Luigi", "work on the mario website", 300)
 
-// const form = document.querySelector('form')!;
+let invoices: Invoice[] = [];
+// invoices.push("hi") //this is not allowed 
+invoices.push(invOne);
+invoices.push(invTwo);
+
+
+invoices.forEach(inv => {
+    // inv.client = "something else..." //produces an error because it is only readonly 
+    console.log(inv.client, inv.amount, inv.format())
+})
+
+
+// console.log('invoices: ', invoices);
+
+// invOne.amount = 40;
+// invTwo.client = "Max";
+
+// console.log(invOne, invTwo);
 
 const form = document.querySelector(".new-item-form") as HTMLFormElement;
-// console.log(form.children);
 
 //inputs
-
 const type = document.querySelector('#type') as HTMLSelectElement;
 const toFrom = document.querySelector('#tofrom') as HTMLInputElement;
 const details = document.querySelector('#details') as HTMLInputElement;
