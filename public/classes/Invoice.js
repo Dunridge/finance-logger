@@ -6,7 +6,6 @@ export class Invoice {
         this.amount = amount;
     }
     format() {
-        // inv.client = "something else..." //produces an error because it is only readonly 
         return `${this.client} owes ₴${this.amount} for ${this.details} `;
     }
 }
